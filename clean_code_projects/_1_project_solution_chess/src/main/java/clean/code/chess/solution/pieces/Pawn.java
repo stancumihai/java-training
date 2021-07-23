@@ -4,7 +4,7 @@ import clean.code.chess.solution.pieces.attributes.Color;
 
 public class Pawn extends Piece {
 
-    private PawnValidator pawnValidator;
+    private final PawnValidator pawnValidator;
 
     public Pawn(Color color) {
         super(color);
@@ -26,8 +26,8 @@ public class Pawn extends Piece {
         }
 
         public boolean isValidNewX(int newX) {
-            return newX == getXCoordinate() + getMovingDirection() * 0 ||
-                    newX == getXCoordinate() + getMovingDirection() * 1;
+            return newX == getXCoordinate() ||
+                    newX == getXCoordinate() + getMovingDirection();
         }
 
         public boolean isValidNewY(int newY) {

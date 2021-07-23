@@ -1,8 +1,8 @@
 package clean.code.chess.solution;
 
+import clean.code.chess.solution.pieces.Piece;
 import clean.code.chess.solution.pieces.attributes.Color;
 import clean.code.chess.solution.pieces.attributes.Position;
-import clean.code.chess.solution.pieces.Piece;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,9 +12,9 @@ public class ChessBoard {
     public static final int MAX_BOARD_WIDTH = 7;
     public static final int MAX_BOARD_HEIGHT = 7;
 
-    private Map<Position, Piece> mapOfPositionAndPiece;
-    private Map<Piece, Position> mapOfPieceAndPosition;
-    private ChessBoardValidator chessBoardValidator;
+    private final Map<Position, Piece> mapOfPositionAndPiece;
+    private final Map<Piece, Position> mapOfPieceAndPosition;
+    private final ChessBoardValidator chessBoardValidator;
 
     public ChessBoard() {
         this.mapOfPieceAndPosition = new HashMap<>(MAX_BOARD_WIDTH * MAX_BOARD_HEIGHT);
@@ -74,6 +74,5 @@ public class ChessBoard {
             }
             return xCoordinate == MAX_BOARD_HEIGHT - 1 || xCoordinate == MAX_BOARD_HEIGHT;
         }
-
     }
 }
